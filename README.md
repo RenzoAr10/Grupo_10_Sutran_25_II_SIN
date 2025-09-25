@@ -1,10 +1,10 @@
 # Grupo_05_Sutran_25_II
-
+---
 ## Introducción
 
 La Superintendencia de Transporte Terrestre de Personas, Carga y Mercancías (SUTRAN) requiere integrar y analizar grandes volúmenes de datos provenientes de distintas fuentes internas y externas. Para ello, se propone una arquitectura de Business Intelligence (BI) apoyada en un Data Warehouse.
 
----
+
 
 ### 1. Ingesta y Preparación de Datos
 
@@ -12,7 +12,7 @@ La Superintendencia de Transporte Terrestre de Personas, Carga y Mercancías (SU
 * **Orquestación:** **Apache Airflow** actúa como el cerebro del sistema, automatizando y programando los flujos de trabajo de datos (ETL) desde la ingesta hasta la carga en los Data Marts.
 * **Área de Preparación (Staging Area):** Los datos brutos se almacenan y procesan aquí. Herramientas como **Apache Spark** y **PostgreSQL** se utilizan para realizar tareas críticas como la limpieza, depuración y transformación, asegurando la calidad de los datos antes de su uso.
 
----
+
 
 ### 2. Almacenamiento y Modelado Analítico con Data Marts
 
