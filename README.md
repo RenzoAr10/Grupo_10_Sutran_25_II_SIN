@@ -4,59 +4,30 @@
 
 La Superintendencia de Transporte Terrestre de Personas, Carga y Mercancías (SUTRAN) requiere integrar y analizar grandes volúmenes de datos provenientes de distintas fuentes internas y externas. Para ello, se propone una arquitectura de Business Intelligence (BI) apoyada en un Data Warehouse.
 
-## 1. Fuentes de Datos
+---
 
-La arquitectura parte de los sistemas operativos internos (OLTP) y de fuentes externas:
+### 1. Ingesta y Preparación de Datos
 
-Internos: infracciones, sanciones, fiscalizaciones y actas de control.
+* **Fuentes de Datos:** La arquitectura se alimenta de fuentes internas de SUTRAN (`Infracciones y sanciones`, `Fiscalizaciones y actas`), así como de datos externos (`SUNARP`, `Clima y mapas viales`).
+* **Orquestación:** **Apache Airflow** actúa como el cerebro del sistema, automatizando y programando los flujos de trabajo de datos (ETL) desde la ingesta hasta la carga en los Data Marts.
+* **Área de Preparación (Staging Area):** Los datos brutos se almacenan y procesan aquí. Herramientas como **Apache Spark** y **PostgreSQL** se utilizan para realizar tareas críticas como la limpieza, depuración y transformación, asegurando la calidad de los datos antes de su uso.
 
-Externos: registros de vehículos de SUNARP, condiciones climáticas y mapas viales.
+---
 
-Estas fuentes representan la base de información que luego será transformada para análisis.
+### 2. Almacenamiento y Modelado Analítico con Data Marts
 
-## 2. Procesos ETL
+Esta capa implementa la metodología Kimball a través del **modelado dimensional**. Los datos limpios se cargan en **cuatro Data Marts** principales, cada uno diseñado para un proceso de negocio específico de SUTRAN.
 
-Para integrar la información se utilizan procesos ETL (Extract, Transform, Load) orquestados con Apache Airflow.
+* **DM Fiscalización y Sanciones:** Provee a los analistas de SUTRAN con la información clave sobre las operaciones en carretera. Contiene métricas como `cantidad_infracciones` y `monto_sancion`, que se pueden analizar por **dimensión** (ej. `Dim_Inspector`, `Dim_Ubicacion`).
+* **DM Gestión de Autorizaciones:** Se enfoca en el proceso administrativo. Permite monitorear el `número_de_permisos_emitidos` y el `tiempo_de_trámite`, analizados por dimensiones como `Solicitante` y `Fecha`.
+* **DM Atención al Ciudadano y Denuncias:** Diseñado para entender las quejas y reclamos. Contiene métricas como `cantidad_de_denuncias` y `tiempo_de_respuesta`, permitiendo a SUTRAN evaluar su eficiencia.
+* **DM Movilidad y Tráfico:** Proporciona un contexto valioso al integrar datos externos. Permite a los usuarios analizar la relación entre `índice_de_siniestros` y el `estado_del_clima`.
 
-Extract: se extraen los datos desde las diferentes fuentes.
+El Data Warehouse, con **Hadoop**, actúa como el repositorio central y escalable que consolida la información de todos los Data Marts.
 
-Transform: se limpian, validan y estandarizan los datos (ejemplo: normalización de placas y catálogos de infracciones).
+---
 
-Load: se cargan los datos en el Data Warehouse para su posterior análisis.
+### 3. Visualización y Gobernanza
 
-Este proceso asegura que los datos estén listos para ser utilizados en la toma de decisiones.
-
-## 3. Medallion Architecture
-
-El almacenamiento se organiza en tres capas:
-
-Bronze (Hadoop HDFS): guarda los datos en su estado crudo, tal como llegan de las fuentes.
-
-Silver (Apache Spark): contiene los datos ya limpios y estructurados, listos para análisis básicos.
-
-Gold (Snowflake): almacena los datos refinados y preparados para consultas de negocio, reportes y dashboards.
-
-
-
-## 4. Consumo de Datos
-
-Una vez preparados, los datos se utilizan de diversas formas:
-
-OLAP: construcción de cubos multidimensionales para análisis rápidos.
-
-Power BI: visualización de indicadores clave de gestión (ejemplo: infracciones por región, recaudación por mes).
-
-Python: análisis avanzado y modelos predictivos, como estimación de riesgos de accidentes.
-
-De esta forma, los datos se convierten en información estratégica para la institución.
-
-## 5. Gobernanza y Seguridad
-
-La arquitectura incluye mecanismos para garantizar seguridad y confianza en los datos:
-
-Azure Purview: catálogo de datos y definiciones de KPIs.
-
-Apache Atlas: seguimiento del linaje de los datos (saber de dónde proviene cada registro).
-
-Azure Monitor: monitoreo del rendimiento de la infraestructura.
-
+* **Visualización:** Los usuarios finales interactúan con los datos a través de esta capa. **Power BI** es la principal herramienta para crear dashboards e informes interactivos. También se utiliza **Python** para análisis más complejos y modelos predictivos.
+* **Gobernanza:** Herramientas como **Azure Purview** y **Apache Atlas** son esenciales para gestionar el linaje y la calidad de los datos. **Azure Monitor** supervisa el rendimiento de toda la arquitectura para detectar problemas a tiempo.
