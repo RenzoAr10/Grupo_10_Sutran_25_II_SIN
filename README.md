@@ -5,13 +5,11 @@
 La Superintendencia de Transporte Terrestre de Personas, Carga y Mercancías (SUTRAN) requiere integrar y analizar grandes volúmenes de datos provenientes de distintas fuentes internas y externas. Para ello, se propone una arquitectura de Business Intelligence (BI) apoyada en un Data Warehouse.
 
 
-
 ### 1. Ingesta y Preparación de Datos
 
 * **Fuentes de Datos:** La arquitectura se alimenta de fuentes internas de SUTRAN (`Infracciones y sanciones`, `Fiscalizaciones y actas`), así como de datos externos (`SUNARP`, `Clima y mapas viales`).
 * **Orquestación:** **Apache Airflow** actúa como el cerebro del sistema, automatizando y programando los flujos de trabajo de datos (ETL) desde la ingesta hasta la carga en los Data Marts.
 * **Área de Preparación (Staging Area):** Los datos brutos se almacenan y procesan aquí. Herramientas como **Apache Spark** y **PostgreSQL** se utilizan para realizar tareas críticas como la limpieza, depuración y transformación, asegurando la calidad de los datos antes de su uso.
-
 
 
 ### 2. Almacenamiento y Modelado Analítico con Data Marts
@@ -25,7 +23,6 @@ Esta capa implementa la metodología Kimball a través del **modelado dimensiona
 
 El Data Warehouse, con **Hadoop**, actúa como el repositorio central y escalable que consolida la información de todos los Data Marts.
 
----
 
 ### 3. Visualización y Gobernanza
 
