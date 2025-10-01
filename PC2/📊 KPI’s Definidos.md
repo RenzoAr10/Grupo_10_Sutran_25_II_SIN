@@ -124,5 +124,6 @@ A continuación, se detallan los KPIs seleccionados, con sus definiciones, fórm
 | **Fuente**     | 2 + 9                                                  |
 | **Responsable**| Of. Planeamiento y Presupuesto                         |
 
+---
 
-
+Este formato proporciona una visión clara y organizada de los KPIs definidos para el proyecto de seguridad vial, permitiendo un monitoreo adecuado y facilitando la toma de decisiones basadas en datos.
