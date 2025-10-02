@@ -1,0 +1,14 @@
+Dificultades:
+- Datasets en XLSX con varias hojas/tablas → se convirtieron a CSV (uno por tabla).
+- Nombres con tildes/ñ/espacios → se normalizaron a snake_case sin acentos.
+- Rutas privadas (/root/datasets) → hdfs no podía leer; se usó /tmp/datasets.
+- Separadores distintos (;) → se ajustó separatorChar en SERDEPROPERTIES.
+- Archivos en OneDrive → se movieron a carpeta local para evitar bloqueos.
+- HiveServer2 tardó en iniciar → se verificó en Ambari hasta quedar en verde.
+
+Soluciones:
+- Staging en /tmp/datasets, permisos 777.
+- Estructura HDFS /data/raw/<dataset>.
+- CREATE EXTERNAL TABLE + OpenCSVSerde.
+- skip.header.line.count=1 para ignorar encabezados.
+- Consultas de control (COUNT, LIMIT, TOP 10) como evidencia.
