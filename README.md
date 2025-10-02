@@ -1,4 +1,4 @@
-# Grupo_05_Sutran_25_II
+# Grupo_10_Sutran_25_II
 ---
 ## Introducción
 
