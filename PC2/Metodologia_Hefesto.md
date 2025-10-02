@@ -53,4 +53,7 @@ Este documento resume la estructura de los tres Data Marts (DM) definidos para e
 
 
 # Diagrama Estrella
+![Fizcalizaciones](https://github.com/RenzoAr10/Grupo_05_Sutran_25_II/blob/main/images/estrella1.png?raw=true)
 
+
+![](https://github.com/RenzoAr10/Grupo_05_Sutran_25_II/blob/main/images/estrella2.png?raw=true)
