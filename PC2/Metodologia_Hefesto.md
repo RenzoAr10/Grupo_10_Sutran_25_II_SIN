@@ -1,6 +1,6 @@
 # 📊 Diseño del Modelo de Datos para SUTRAN - Data Marts
 
-Este documento resume la estructura de los tres Data Marts (DM) definidos para el proyecto de Inteligencia de Negocios, incluyendo sus perspectivas (dimensiones) e indicadores (hechos).
+Se detalla la estructura de los dos Data Marts (DM) definidos para el proyecto, incluyendo sus perspectivas (dimensiones) e indicadores (hechos).
 
 ---
 
