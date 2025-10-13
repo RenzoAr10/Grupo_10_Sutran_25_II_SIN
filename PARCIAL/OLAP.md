@@ -10,9 +10,9 @@
 | :--- | :--- | :--- | :--- |
 | **Tiempo** | Momento del siniestro y la fecha de corte del reporte. | `FECHA_CORTE`,, `AÑO`, `MES` | D1, D3, D2, D4 |
 | **Ubicación** | Lugar exacto donde ocurrió el evento. | `DEPARTAMENTO`, `PROVINCIA`, `DISTRITO`, `CODIGO_VÍA`, `KILOMETRO`, `COORDENADAS LATITUD/LONGITUD` | D1, D3, D6, D5 |
-| **Causa/Infracción** | Causa del siniestro, usada como *proxy* de la infracción cometida. | `CLASE SINIESTRO`, `CAUSA FACTOR PRINCIPAL`, `CAUSA ESPECÍFICA` | D3, D2 |
+| **Infracción** | infracción cometida. | `CAUSA FACTOR PRINCIPAL`, `CAUSA ESPECÍFICA` | D3, D2 |
 | **Transportista** | Perfil de la entidad (vehículo/conductor) que es sujeto potencial de fiscalización. | `VEHÍCULO`, `MODALIDAD DE TRANSPORTE`, `CLASE_LICENCIA`, `ESTADO SOAT`, `ESTADO CITV` | D4, D2 |
-| **Sanción (Acción)** | Indica si se tomó alguna acción administrativa (proxy de sanción). | `ACCIONES TOMADAS` | D5 (OSITRAN) |
+| **Sanción (Acción)** | Indica si se tomó alguna acción administrativa. | `ACCIONES TOMADAS` | D5 (OSITRAN) |
 
 ### b. Indicadores (Hechos)
 
@@ -24,6 +24,7 @@
 | **Contador de Vehículos Involucrados** | Aditivo (Sum) | `VEHÍCULOS INV.` | Mide el alcance de la fiscalización del evento. |
 | **Eventos con Acción Tomada** | Semi-Aditivo (Count) | `ACCIONES TOMADAS` (No nulo) | Mide la frecuencia de intervención activa. |
 
+![Fizcalizaciones](https://github.com/RenzoAr10/Grupo_10_Sutran_25_II_SIN/blob/main/images/diagrama%20estrella%2001.jpg)
 ---
 
 ## 2. DM de Siniestros  🏥
@@ -50,12 +51,9 @@
 | **Índice de Gravedad (Calculado)** | Calculado | (`FALLECIDOS` / `HERIDOS + FALLECIDOS`) | Mide la letalidad promedio del evento. |
 | **Conteo de Personas Ilesas** | Aditivo (Count) | `GRAVEDAD` = ILESO | Mide la supervivencia en el siniestro. |
 
-
-
-
-
-
-# Diagrama Estrella
-![Fizcalizaciones](https://github.com/RenzoAr10/Grupo_10_Sutran_25_II_SIN/blob/main/images/diagrama%20estrella%2001.jpg)
-
 ![](https://github.com/RenzoAr10/Grupo_10_Sutran_25_II_SIN/blob/main/images/diagrama%20estrella%2002.jpg)
+
+
+
+
+
