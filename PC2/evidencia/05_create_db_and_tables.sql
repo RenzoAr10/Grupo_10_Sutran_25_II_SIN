@@ -16,7 +16,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS raw.sutran_accidentes_2020_2021 (
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
   "separatorChar" = ",",        -- El delimitador
-  "quoteChar"     = "\"",
+  "quoteChar"     = "\",
   "escapeChar"    = "\\"
 )
 STORED AS TEXTFILE
@@ -32,7 +32,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS raw.estadisticas_accidentes_2012_2018 (
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
   "separatorChar" = ",",
-  "quoteChar"     = "\"",
+  "quoteChar"     = "\",
   "escapeChar"    = "\\"
 )
 STORED AS TEXTFILE
@@ -48,7 +48,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS raw.victimas_fatales_2012_2018 (
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
   "separatorChar" = ",",
-  "quoteChar"     = "\"",
+  "quoteChar"     = "\",
   "escapeChar"    = "\\"
 )
 STORED AS TEXTFILE
