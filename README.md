@@ -274,7 +274,7 @@ CREATE DATABASE IF NOT EXISTS raw;
 USE raw;
 ```
 
-*(Pega aquí tus sentencias `CREATE EXTERNAL TABLE` de la zona raw.)*
+[Ver código](PARCIAL/evidencia/RAW_create_db_and_table.sql)
 
 ---
 
@@ -284,8 +284,7 @@ USE raw;
 CREATE DATABASE IF NOT EXISTS curated;
 USE curated;
 ```
-
-*(Pega aquí tus sentencias `CREATE EXTERNAL TABLE` de la zona curated, formato Parquet y particiones.)*
+[Ver código](PARCIAL/evidencia/CURATED_table.sql)
 
 ---
 
