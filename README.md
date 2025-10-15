@@ -321,18 +321,7 @@ LIMIT 10;
 
 ---
 
-## 5. Evidencia técnica esperada
-
-**Screenshots recomendados para tu informe:**
-
-* Ambari con servicios HDFS, Hive y Spark activos.
-* WebShell mostrando estructura `/data/raw` con `hdfs dfs -ls -R /data/raw`.
-* Beeline con los comandos `SHOW TABLES` y `SELECT COUNT(*)`.
-* Resultado visible del “Top 10” de registros en una tabla raw.
-
----
-
-## 6. Notas y dificultades técnicas
+## 5. Notas y dificultades técnicas
 
 Durante la implementación se identificaron algunos retos:
 
@@ -343,7 +332,7 @@ Durante la implementación se identificaron algunos retos:
 
 ---
 
-## 8. Próximos pasos (para el Parcial)
+## 6. Próximos pasos (para el Parcial)
 
 * Implementar transformaciones con PySpark (limpieza, particionado y carga a `curated`).
 * Validar los resultados con `MSCK REPAIR TABLE` y consultas agregadas.
