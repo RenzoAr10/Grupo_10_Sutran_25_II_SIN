@@ -196,7 +196,11 @@ Verificar los servicios principales desde **Ambari** (que esten verdes):
 En PowerShell (en el host), subir los archivos CSV al sandbox usando `pscp`:
 
 ```bash
-pscp.exe -P 2222 -pw Jairo2004 C:\Users\jairo\Documents\datasets_sutran\*.csv root@127.0.0.1:/opt/datasets/
+# Opción con Aspera (ascp)
+ascp -P 2222 "C:\Users\jairo\Documents\datasets_sutran\*.csv" root@127.0.0.1:/opt/datasets/
+
+# Usando scp si no se tiene ascp (Este fue el usado)
+scp -P 2222 "C:\Users\jairo\Documents\datasets_sutran\*.csv" root@127.0.0.1:/opt/datasets/
 ```
 
 Este comando transfiere todos los `.csv` desde la carpeta local a la ruta `/opt/datasets/` dentro de la VM.
