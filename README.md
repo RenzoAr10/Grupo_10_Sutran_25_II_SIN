@@ -336,11 +336,22 @@ Durante la implementación se identificaron algunos retos:
 
 ---
 
-## 6. Próximos pasos (para el Parcial)
+## 6. DEL PARCIAL
 
 * Implementar transformaciones con PySpark (limpieza, particionado y carga a `curated`).
-* Validar los resultados con `MSCK REPAIR TABLE` y consultas agregadas.
-* Conectar Hive con Power BI mediante ODBC o exportación CSV.
-* Generar dashboard preliminar (KPIs de siniestralidad vial).
+Hecho
+[Ver código](PARCIAL/evidencia/CURATED_table.sql)
 
+* Validar los resultados con `MSCK REPAIR TABLE` y consultas agregadas.
+[Ver código](PARCIAL/evidencia/checks.sql)
+![alt text](PARCIAL/imagenes_evidencias/image11.png)
+
+* Conectar Hive con Power BI mediante ODBC o exportación CSV.
+![alt text](PARCIAL/imagenes_evidencias/image12.png)
+
+* Ingresar con las credenciales maria_dev / maria_dev
+![alt text](PARCIAL/imagenes_evidencias/image13.png)
+
+* Generar dashboard preliminar (KPIs de siniestralidad vial).
+![alt text](PARCIAL/imagenes_evidencias/image14.png)
 
