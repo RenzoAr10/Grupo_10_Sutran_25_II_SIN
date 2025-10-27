@@ -884,3 +884,14 @@ ORDER BY t.ano;
     ```
 
 
+# Generación de Reportee PowerBI
+
+## 1. Instalamos el ODBC para Hive en la PC
+Descargamos e instalamos el drive (Cloudera Hive ODBC Driver (más estable para Hortonworks))
+![image.png](/images/image4.png)
+
+![image.png](/images/image5.png)
+
+![image.png](/images/image6.png)
+
+Luego seleccionamos HiveSandBox o el nombre de Data Source Name que asignaron.
