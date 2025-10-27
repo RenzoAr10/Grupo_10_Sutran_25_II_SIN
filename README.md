@@ -890,6 +890,7 @@ ORDER BY t.ano;
 
 
 # Generación de Reportee PowerBI
+https://github.com/RenzoAr10/Grupo_10_Sutran_25_II_SIN/blob/main/PARCIAL/G10_SUTRAN_DF_1.pbix
 
 ## 1. Instalamos el ODBC para Hive en la PC
 Descargamos e instalamos el drive (Cloudera Hive ODBC Driver (más estable para Hortonworks))
