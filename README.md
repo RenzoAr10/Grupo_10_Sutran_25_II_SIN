@@ -226,6 +226,11 @@ hdfs dfs -ls -h /data
 
 ### 2.3 LIMPIEZA CON PYSPARK
 
+LUEGO DE SUBIR LOS CSV PRINCIPALES A LA VM, exactamente a la carpeta /data/raw creada posteriormente
+![image.png](/images/image7.png)
+
+PROCEDEMOS CON LA LIMPIEZA USANDO SPARK
+
 ```bash
 #INICIAMOS
 pyspark
